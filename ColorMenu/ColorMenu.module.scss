@@ -1,0 +1,83 @@
+@import "../../../styles/index.scss";
+
+.colorMenu {
+	position: absolute;
+	left: 103%;
+	top: 0;
+
+	&__options {
+		background-color: $white;
+		padding: 2px;
+		border-radius: 0px;
+
+		:global {
+			.MuiButton-root {
+				margin: 4px;
+				border-radius: 0;
+				height: 40px;
+			}
+		}
+	}
+
+	&__option {
+		&--green {
+			:global {
+				.MuiButton-root {
+					background-color: $green-note;
+
+					&:hover {
+						background-color: $green-note-shadow-color;
+					}
+				}
+			}
+		}
+
+		&--yellow {
+			:global {
+				.MuiButton-root {
+					background-color: $yellow-note;
+
+					&:hover {
+						background-color: $yellow-note-shadow-color;
+					}
+				}
+			}
+		}
+
+		&--blue {
+			:global {
+				.MuiButton-root {
+					background-color: $blue-note;
+
+					&:hover {
+						background-color: $blue-note-shadow-color;
+					}
+				}
+			}
+		}
+
+		&--red {
+			:global {
+				.MuiButton-root {
+					background-color: $red-note;
+
+					&:hover {
+						background-color: $red-note-shadow-color;
+					}
+				}
+			}
+		}
+
+		&--orange {
+			:global {
+				.MuiButton-root {
+					background-color: $orange-note;
+
+					&:hover {
+						background-color: $orange-note-shadow-color;
+					}
+				}
+			}
+		}
+	}
+}
