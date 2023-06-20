@@ -7,9 +7,9 @@ import clsx from "clsx";
 import styles from "./StickyNode.module.scss";
 import { StickyNode as StickyNodeType } from "../../types/nodeTypes";
 
-type FontSize = "larger" | "large" | "big" | "normal";
+type FontSize = "larger" | "large";
 
-const fontSizes: Array<FontSize> = ["larger", "large", "big", "normal"];
+const fontSizes: Array<FontSize> = ["larger", "large"];
 
 // TODO: Refactor
 const StickyNode: React.FC<StickyNodeType> = ({ id, data, selected }) => {
@@ -30,22 +30,23 @@ const StickyNode: React.FC<StickyNodeType> = ({ id, data, selected }) => {
 	}, [textfieldRef]);
 
 	useEffect(() => {
+		// ! This really needs to be remade ;/
 		let indexOfFontSize = fontSizes.indexOf(fontSize);
 		const isAtMaxScrollHeight = textfieldRef.current && textfieldRef.current?.scrollHeight >= 210;
-		const isBelowMedianScrollHeight = textfieldRef.current && textfieldRef.current?.scrollHeight <= 150;
+		const isBelowMedianScrollHeight = textfieldRef.current && textfieldRef.current?.value.length <= 80;
 
 		const isNotLastFontSize = indexOfFontSize < fontSizes.length - 1;
 		const isNotFirstFontSize = indexOfFontSize !== 0;
 
-		if (isBelowMedianScrollHeight && isNotFirstFontSize) {
-			indexOfFontSize--;
-		}
-
 		if (isAtMaxScrollHeight && isNotLastFontSize) {
 			indexOfFontSize++;
+			return setFontSize(fontSizes[indexOfFontSize]);
 		}
 
-		setFontSize(fontSizes[indexOfFontSize]);
+		if (isBelowMedianScrollHeight && isNotFirstFontSize) {
+			indexOfFontSize--;
+			return setFontSize(fontSizes[indexOfFontSize]);
+		}
 	}, [textfieldRef.current?.scrollHeight]);
 
 	useEffect(() => {
