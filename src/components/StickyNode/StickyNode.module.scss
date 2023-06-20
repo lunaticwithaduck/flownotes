@@ -1,0 +1,80 @@
+@import "../../styles/index.scss";
+
+.stickyNode {
+	position: relative;
+	height: 240px;
+	width: 240px;
+	background-color: $green-note;
+	box-shadow: $green-note-shadow-main;
+	padding: 12px;
+
+	&__handle {
+		opacity: 0;
+		display: none;
+	}
+
+	&__inputContainer {
+		height: 100%;
+		width: 100%;
+
+		:global {
+			.MuiFormControl-root {
+				height: 100%;
+			}
+
+			.MuiInput-root {
+				height: 100%;
+				text-align: center;
+				font-size: $font-larger;
+			}
+		}
+
+		&--large {
+			:global {
+				.MuiInput-root {
+					font-size: $font-large;
+				}
+			}
+		}
+
+		&--big {
+			:global {
+				.MuiInput-root {
+					font-size: $font-big;
+				}
+			}
+		}
+
+		&--normal {
+			:global {
+				.MuiInput-root {
+					font-size: $font-normal;
+				}
+			}
+		}
+
+		&--centered {
+			height: 100%;
+			width: 100%;
+
+			:global {
+				.MuiFormControl-root {
+					height: 100%;
+					width: 100%;
+				}
+
+				.MuiInput-root {
+					height: 100%;
+					text-align: center;
+					width: 72%;
+					left: 35px;
+					font-size: $font-larger;
+				}
+			}
+		}
+	}
+
+	&:hover {
+		box-shadow: $green-note-shadow-hover;
+	}
+}
