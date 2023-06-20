@@ -14,3 +14,4 @@ Current Preview:
 ### Tech Stack Might Expand With
 
 - Redux Toolkit / Zustand
+- PostgreSQL w/ Prisma
