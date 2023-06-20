@@ -15,3 +15,4 @@ Current Preview:
 
 - Redux Toolkit / Zustand
 - PostgreSQL w/ Prisma
+- Socket.io
