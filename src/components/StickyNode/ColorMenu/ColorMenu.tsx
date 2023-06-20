@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, memo } from "react";
 import { useReactFlow } from "reactflow";
 import { ButtonGroup, Button } from "@mui/material";
 
@@ -10,7 +10,7 @@ interface ColorMenuProps {
 	id: string;
 }
 
-export const ColorMenu: React.FC<ColorMenuProps> = ({ id }) => {
+export const ColorMenu: React.FC<ColorMenuProps> = memo(({ id }) => {
 	const { setNodes } = useReactFlow();
 
 	const changeNodeColor = useCallback(
@@ -68,4 +68,4 @@ export const ColorMenu: React.FC<ColorMenuProps> = ({ id }) => {
 			</ButtonGroup>
 		</div>
 	);
-};
+});
