@@ -12,7 +12,7 @@ type FontSize = "larger" | "large" | "big" | "normal";
 const fontSizes: Array<FontSize> = ["larger", "large", "big", "normal"];
 
 // TODO: Refactor
-const StickyNode: React.FC<StickyNodeType> = ({ id, data }) => {
+const StickyNode: React.FC<StickyNodeType> = ({ id, data, selected }) => {
 	const [shouldCenterText, setCenterText] = useState(true);
 	const [fontSize, setFontSize] = useState<FontSize>("larger");
 	const [textfieldValue, setTextfieldValue] = useState("");
@@ -66,7 +66,7 @@ const StickyNode: React.FC<StickyNodeType> = ({ id, data }) => {
 					position={Position.Top}
 					className={styles.stickyNode__handle}
 				/>
-				{true && <ColorMenu id={id} />}
+				{selected && <ColorMenu id={id} />}
 				<div className={clsx(shouldCenterText ? styles[`stickyNode__inputContainer--centered`] : styles.stickyNode__inputContainer, styles[`stickyNode__inputContainer--${fontSize}`])}>
 					<TextField
 						id="standard-basic"
