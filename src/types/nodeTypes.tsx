@@ -7,7 +7,7 @@ interface StickyNodeData {
 	color: Colors;
 }
 
-export interface StickyNodes extends Node {
+export interface StickyNode extends Node {
 	data: StickyNodeData;
 }
 

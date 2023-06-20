@@ -1,17 +1,17 @@
 import { useMemo } from "react";
 import { Background, BackgroundVariant, MiniMap, ReactFlow, useNodesState } from "reactflow";
-import nodeTypes, { NodeTypes, StickyNodes } from "../../types/nodeTypes";
+import nodeTypes, { NodeTypes, StickyNode } from "../../types/nodeTypes";
 
 import "reactflow/dist/style.css";
 import CustomControls from "./CustomControls";
 import CustomThemeProvider from "./CustomThemeProvider";
 
-const initialNodes: StickyNodes[] = [{ id: "1", position: { x: 0, y: 0 }, data: { color: "green" }, type: NodeTypes.StickyNode }];
+const initialNodes: StickyNode[] = [{ id: "1", position: { x: 0, y: 0 }, data: { color: "green" }, type: NodeTypes.StickyNode }];
 
 export const ReactFlowContainer = () => {
 	const [nodes, _, onNodesChange] = useNodesState(initialNodes);
 
-	const memoizedNodeTypes = useMemo(() => nodeTypes, []);
+	const memoizedNodeTypes = useMemo(() => nodeTypes, []) as any; // TODO: Don't use any
 
 	return (
 		<>

@@ -5,13 +5,14 @@ import ColorMenu from "./ColorMenu";
 
 import clsx from "clsx";
 import styles from "./StickyNode.module.scss";
+import { StickyNode as StickyNodeType } from "../../types/nodeTypes";
 
 type FontSize = "larger" | "large" | "big" | "normal";
 
 const fontSizes: Array<FontSize> = ["larger", "large", "big", "normal"];
 
 // TODO: Refactor
-const StickyNode = () => {
+const StickyNode: React.FC<StickyNodeType> = ({ id }) => {
 	const [shouldCenterText, setCenterText] = useState(true);
 	const [fontSize, setFontSize] = useState<FontSize>("larger");
 	const [textfieldValue, setTextfieldValue] = useState("");
@@ -31,17 +32,17 @@ const StickyNode = () => {
 	useEffect(() => {
 		let indexOfFontSize = fontSizes.indexOf(fontSize);
 		const isAtMaxScrollHeight = textfieldRef.current && textfieldRef.current?.scrollHeight >= 210;
-		const isBelowMedianScrollHeight = textfieldRef.current && textfieldRef.current?.scrollHeight <= 80;
+		const isBelowMedianScrollHeight = textfieldRef.current && textfieldRef.current?.scrollHeight <= 150;
 
 		const isNotLastFontSize = indexOfFontSize < fontSizes.length - 1;
 		const isNotFirstFontSize = indexOfFontSize !== 0;
 
-		if (isAtMaxScrollHeight && isNotLastFontSize) {
-			indexOfFontSize++;
-		}
-
 		if (isBelowMedianScrollHeight && isNotFirstFontSize) {
 			indexOfFontSize--;
+		}
+
+		if (isAtMaxScrollHeight && isNotLastFontSize) {
+			indexOfFontSize++;
 		}
 
 		setFontSize(fontSizes[indexOfFontSize]);
@@ -65,7 +66,7 @@ const StickyNode = () => {
 					position={Position.Top}
 					className={styles.stickyNode__handle}
 				/>
-				{true && <ColorMenu />}
+				{true && <ColorMenu id={id} />}
 				<div className={clsx(shouldCenterText ? styles[`stickyNode__inputContainer--centered`] : styles.stickyNode__inputContainer, styles[`stickyNode__inputContainer--${fontSize}`])}>
 					<TextField
 						id="standard-basic"
