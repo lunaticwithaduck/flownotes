@@ -1,6 +1,7 @@
 import { useRef, useCallback, useState, memo, useEffect } from "react";
 import { TextField } from "@mui/material";
 import { Handle, Position } from "reactflow";
+import ColorMenu from "./ColorMenu";
 
 import clsx from "clsx";
 import styles from "./StickyNode.module.scss";
@@ -64,6 +65,7 @@ const StickyNode = () => {
 					position={Position.Top}
 					className={styles.stickyNode__handle}
 				/>
+				{true && <ColorMenu />}
 				<div className={clsx(shouldCenterText ? styles[`stickyNode__inputContainer--centered`] : styles.stickyNode__inputContainer, styles[`stickyNode__inputContainer--${fontSize}`])}>
 					<TextField
 						id="standard-basic"
