@@ -7,7 +7,7 @@ Current Preview:
 3. How about running the dev script now?
 4. Realise this project is very badly written and send me some hate mail ;)))
 
-### Tech Stack of the Project
+### Tech Stack of the Project (this info is pretty useless to you but I kinda like how it looks)
 
 - React
 - TypeScript
