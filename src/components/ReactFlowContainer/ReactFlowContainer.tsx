@@ -1,12 +1,12 @@
 import { useMemo } from "react";
-import { Background, BackgroundVariant, MiniMap, Node, ReactFlow, useNodesState } from "reactflow";
-import nodeTypes, { NodeTypes } from "../../types/nodeTypes";
+import { Background, BackgroundVariant, MiniMap, ReactFlow, useNodesState } from "reactflow";
+import nodeTypes, { NodeTypes, StickyNodes } from "../../types/nodeTypes";
 
 import "reactflow/dist/style.css";
 import CustomControls from "./CustomControls";
 import CustomThemeProvider from "./CustomThemeProvider";
 
-const initialNodes: Node[] = [{ id: "1", position: { x: 0, y: 0 }, data: {}, type: NodeTypes.StickyNode }];
+const initialNodes: StickyNodes[] = [{ id: "1", position: { x: 0, y: 0 }, data: { color: "green" }, type: NodeTypes.StickyNode }];
 
 export const ReactFlowContainer = () => {
 	const [nodes, _, onNodesChange] = useNodesState(initialNodes);

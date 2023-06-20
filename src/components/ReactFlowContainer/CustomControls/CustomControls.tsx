@@ -19,7 +19,7 @@ export const CustomControls = () => {
 
 	const onAddNode = useCallback(() => {
 		const newNodeID = uuid();
-		const newNode: Node = { id: newNodeID, type: NodeTypes.StickyNode, position: { x: 0, y: 400 }, data: {} };
+		const newNode: Node = { id: newNodeID, type: NodeTypes.StickyNode, position: { x: 0, y: 400 }, data: { color: "green" } };
 
 		setNodes([...getNodes(), newNode]);
 	}, []);

@@ -2,6 +2,8 @@ import { ButtonGroup, Button } from "@mui/material";
 
 import styles from "./ColorMenu.module.scss";
 
+export type Colors = "green" | "yellow" | "blue" | "blue" | "red" | "orange";
+
 export const ColorMenu = () => {
 	return (
 		<div className={styles.colorMenu}>
