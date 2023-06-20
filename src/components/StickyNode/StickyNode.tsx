@@ -12,7 +12,7 @@ type FontSize = "larger" | "large" | "big" | "normal";
 const fontSizes: Array<FontSize> = ["larger", "large", "big", "normal"];
 
 // TODO: Refactor
-const StickyNode: React.FC<StickyNodeType> = ({ id }) => {
+const StickyNode: React.FC<StickyNodeType> = ({ id, data }) => {
 	const [shouldCenterText, setCenterText] = useState(true);
 	const [fontSize, setFontSize] = useState<FontSize>("larger");
 	const [textfieldValue, setTextfieldValue] = useState("");
@@ -57,7 +57,7 @@ const StickyNode: React.FC<StickyNodeType> = ({ id }) => {
 	return (
 		<>
 			<div
-				className={styles.stickyNode}
+				className={clsx(styles.stickyNode, styles[`stickyNode--${data.color}`])}
 				onClick={onNodeClick}
 				onBlur={onNodeBlur}
 			>

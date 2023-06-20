@@ -5,7 +5,7 @@
 	height: 240px;
 	width: 240px;
 	background-color: $green-note;
-	box-shadow: $green-note-shadow-main;
+	box-shadow: $shadow-main;
 	padding: 12px;
 
 	&__handle {
@@ -74,7 +74,27 @@
 		}
 	}
 
+	&--green {
+		background-color: $green-note;
+	}
+
+	&--yellow {
+		background-color: $yellow-note;
+	}
+
+	&--blue {
+		background-color: $blue-note;
+	}
+
+	&--red {
+		background-color: $red-note;
+	}
+
+	&--orange {
+		background-color: $orange-note;
+	}
+
 	&:hover {
-		box-shadow: $green-note-shadow-hover;
+		box-shadow: $shadow-hover;
 	}
 }
