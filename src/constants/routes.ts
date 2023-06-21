@@ -1,7 +1,7 @@
 const routes = {
-	authenticate: "/authenticate",
-	dashboard: "/dashboard",
-	home: "/",
+	AUTHENTICATE: "/authenticate",
+	DASHBOARD: "/dashboard",
+	HOME: "/",
 };
 
 export default routes;

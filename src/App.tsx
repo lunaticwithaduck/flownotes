@@ -16,11 +16,11 @@ const App = () => {
 			>
 				<Routes>
 					<Route
-						path={routes.dashboard}
+						path={routes.DASHBOARD}
 						element={<ProtectedRoute component={Board} />}
 					/>
 					<Route
-						path={routes.home}
+						path={routes.HOME}
 						element={<ProtectedRoute component={Board} />}
 					/>
 				</Routes>
