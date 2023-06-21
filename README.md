@@ -26,6 +26,5 @@ Current Preview:
 
 ### TODO List:
 - Add the Ability to Save Boards (CRUD)
-- Add Authentication
 - Add Collaboration Feature
 - Maybe Add Undo Button??????
