@@ -15,7 +15,9 @@
 			.MuiButton-root {
 				margin: 6px;
 				border-radius: 0;
+				border-bottom: none !important;
 				height: 40px;
+				width: 40px;
 			}
 		}
 	}

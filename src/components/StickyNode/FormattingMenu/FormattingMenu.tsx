@@ -1,4 +1,5 @@
 import { Button, ButtonGroup } from "@mui/material";
+import { FormatAlignCenter, FormatAlignLeft, FormatAlignRight, Delete } from "@mui/icons-material";
 
 import styles from "./FormattingMenu.module.scss";
 
@@ -17,10 +18,18 @@ export const FormattingMenu = () => {
 				orientation="vertical"
 				className={styles.formattingMenu__options}
 			>
-				<Button variant="contained" />
-				<Button variant="contained" />
-				<Button variant="contained" />
-				<Button variant="contained" />
+				<Button variant="text">
+					<FormatAlignCenter />
+				</Button>
+				<Button variant="text">
+					<FormatAlignLeft />
+				</Button>
+				<Button variant="text">
+					<FormatAlignRight />
+				</Button>
+				<Button variant="text">
+					<Delete />
+				</Button>
 			</ButtonGroup>
 		</div>
 	);
