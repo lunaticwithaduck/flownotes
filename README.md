@@ -1,6 +1,5 @@
 Current Preview:
-![image](https://github.com/lunaticwithaduck/flownotes/assets/132492967/67dc21be-ebc9-4fdb-9313-f7a4d6a5d17a)
-
+![image](https://github.com/lunaticwithaduck/flownotes/assets/132492967/6da3eaf6-dc2c-48f8-a9d4-3fa7ec8081c6)
 
 ### "I want to try this out for some not very bright reason how do I set it up?"
 1. Clone project
