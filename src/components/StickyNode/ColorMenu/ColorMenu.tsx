@@ -32,7 +32,7 @@ export const ColorMenu: React.FC<ColorMenuProps> = memo(({ id }) => {
 		<div className={styles.colorMenu}>
 			<ButtonGroup
 				variant="contained"
-				orientation="vertical"
+				orientation="horizontal"
 				className={styles.colorMenu__options}
 			>
 				<div className={styles[`colorMenu__option--green`]}>

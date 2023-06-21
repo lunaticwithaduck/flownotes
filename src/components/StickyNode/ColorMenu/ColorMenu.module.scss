@@ -2,9 +2,9 @@
 
 .colorMenu {
 	position: absolute;
-	left: 100%;
-	top: 0;
-	padding-left: 3%;
+	bottom: 100%;
+	right: 0;
+	padding-bottom: 3%;
 
 	&__options {
 		background-color: $white;
@@ -13,7 +13,7 @@
 
 		:global {
 			.MuiButton-root {
-				margin: 4px;
+				margin: 6px;
 				border-radius: 0;
 				height: 40px;
 			}
