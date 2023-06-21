@@ -9,12 +9,15 @@ import { StickyNode as StickyNodeType } from "../../types/nodeTypes";
 import FormattingMenu from "./FormattingMenu";
 
 type FontSize = "larger" | "large";
+export type TextAlignment = "center" | "left" | "right";
 
 const fontSizes: Array<FontSize> = ["larger", "large"];
 
 // TODO: Refactor
 const StickyNode: React.FC<StickyNodeType> = ({ id, data, selected }) => {
 	const [fontSize, setFontSize] = useState<FontSize>("larger");
+	const [textAlignment, setTextAlignment] = useState<TextAlignment>("center");
+
 	const [textfieldValue, setTextfieldValue] = useState("");
 	const textfieldRef = useRef<HTMLTextAreaElement>();
 
@@ -63,9 +66,14 @@ const StickyNode: React.FC<StickyNodeType> = ({ id, data, selected }) => {
 				/>
 
 				{selected && <ColorMenu id={id} />}
-				{selected && <FormattingMenu id={id} />}
+				{selected && (
+					<FormattingMenu
+						id={id}
+						setTextAlignment={setTextAlignment}
+					/>
+				)}
 
-				<div className={clsx(styles.stickyNode__inputContainer, styles[`stickyNode__inputContainer--${fontSize}`])}>
+				<div className={clsx(styles.stickyNode__inputContainer, styles[`stickyNode__inputContainer--${fontSize}`], styles[`stickyNode__inputContainer--${textAlignment}`])}>
 					<TextField
 						id="standard-basic"
 						variant="standard"

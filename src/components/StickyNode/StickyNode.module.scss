@@ -29,6 +29,36 @@
 			}
 		}
 
+		&--center {
+			:global {
+				.MuiInput-root {
+					textarea {
+						text-align: center;
+					}
+				}
+			}
+		}
+
+		&--left {
+			:global {
+				.MuiInput-root {
+					textarea {
+						text-align: left;
+					}
+				}
+			}
+		}
+
+		&--right {
+			:global {
+				.MuiInput-root {
+					textarea {
+						text-align: right;
+					}
+				}
+			}
+		}
+
 		&--large {
 			:global {
 				.MuiInput-root {
