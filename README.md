@@ -14,6 +14,7 @@ Current Preview:
 - TypeScript
 - ReactFlow
 - MaterialUI
+- Auth0
 - Figma
 - SCSS
 
@@ -22,11 +23,8 @@ Current Preview:
 - Redux Toolkit / Zustand
 - PostgreSQL w/ Prisma
 - Socket.io
-- AuthZero
 
 ### TODO List:
-- Add MUI & SCSS Themes
-- Add Text Formatting Menu
 - Add the Ability to Save Boards (CRUD)
 - Add Authentication
 - Add Collaboration Feature
