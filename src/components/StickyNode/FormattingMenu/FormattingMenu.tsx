@@ -1,3 +1,5 @@
+import { Button, ButtonGroup } from "@mui/material";
+
 import styles from "./FormattingMenu.module.scss";
 
 /*
@@ -8,5 +10,18 @@ import styles from "./FormattingMenu.module.scss";
 */
 
 export const FormattingMenu = () => {
-	return <div className={styles.formattingMenu}></div>;
+	return (
+		<div className={styles.formattingMenu}>
+			<ButtonGroup
+				variant="contained"
+				orientation="vertical"
+				className={styles.formattingMenu__options}
+			>
+				<Button variant="contained" />
+				<Button variant="contained" />
+				<Button variant="contained" />
+				<Button variant="contained" />
+			</ButtonGroup>
+		</div>
+	);
 };

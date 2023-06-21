@@ -6,6 +6,7 @@ import ColorMenu from "./ColorMenu";
 import clsx from "clsx";
 import styles from "./StickyNode.module.scss";
 import { StickyNode as StickyNodeType } from "../../types/nodeTypes";
+import FormattingMenu from "./FormattingMenu";
 
 type FontSize = "larger" | "large";
 
@@ -68,6 +69,7 @@ const StickyNode: React.FC<StickyNodeType> = ({ id, data, selected }) => {
 					className={styles.stickyNode__handle}
 				/>
 				{selected && <ColorMenu id={id} />}
+				{selected && <FormattingMenu />}
 				<div className={clsx(shouldCenterText ? styles[`stickyNode__inputContainer--centered`] : styles.stickyNode__inputContainer, styles[`stickyNode__inputContainer--${fontSize}`])}>
 					<TextField
 						id="standard-basic"
