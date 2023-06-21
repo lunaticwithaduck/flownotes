@@ -1,28 +1,8 @@
-import { Route, BrowserRouter, Routes, useNavigate } from "react-router-dom";
-import { Auth0Provider, withAuthenticationRequired } from "@auth0/auth0-react";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
+import Auth0ProviderWithRedirectCallback, { ProtectedRoute } from "./components/Auth0ProviderWithRedirectCallback";
 import routes from "./constants/routes";
 
 import Board from "./features/Board";
-
-const ProtectedRoute = ({ component, ...args }: { component: React.FC<unknown> }) => {
-	const Component = withAuthenticationRequired(component, args);
-	return <Component />;
-};
-
-const Auth0ProviderWithRedirectCallback = ({ children, ...props }: any) => {
-	const navigate = useNavigate();
-	const onRedirectCallback = (appState: any) => {
-		navigate((appState && appState.returnTo) || window.location.pathname);
-	};
-	return (
-		<Auth0Provider
-			onRedirectCallback={onRedirectCallback}
-			{...props}
-		>
-			{children}
-		</Auth0Provider>
-	);
-};
 
 const App = () => {
 	return (
