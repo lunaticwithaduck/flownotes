@@ -1,6 +1,6 @@
 import React, { useCallback, memo } from "react";
 import { useReactFlow } from "reactflow";
-import { Button, ButtonGroup } from "@mui/material";
+import { Button, ButtonGroup, Tooltip } from "@mui/material";
 import { FormatAlignCenter, FormatAlignLeft, FormatAlignRight, Delete } from "@mui/icons-material";
 
 import styles from "./FormattingMenu.module.scss";
@@ -25,30 +25,58 @@ export const FormattingMenu: React.FC<FormattingMenuProps> = memo(({ id, setText
 				orientation="vertical"
 				className={styles.formattingMenu__options}
 			>
-				<Button
-					variant="text"
-					onClick={() => setTextAlignment("left")}
+				<Tooltip
+					title="left"
+					placement="right"
+					arrow
+					followCursor
 				>
-					<FormatAlignLeft />
-				</Button>
-				<Button
-					variant="text"
-					onClick={() => setTextAlignment("center")}
+					<Button
+						variant="text"
+						onClick={() => setTextAlignment("left")}
+					>
+						<FormatAlignLeft />
+					</Button>
+				</Tooltip>
+				<Tooltip
+					title="center"
+					placement="right"
+					arrow
+					followCursor
 				>
-					<FormatAlignCenter />
-				</Button>
-				<Button
-					variant="text"
-					onClick={() => setTextAlignment("right")}
+					<Button
+						variant="text"
+						onClick={() => setTextAlignment("center")}
+					>
+						<FormatAlignCenter />
+					</Button>
+				</Tooltip>
+				<Tooltip
+					title="right"
+					placement="right"
+					arrow
+					followCursor
 				>
-					<FormatAlignRight />
-				</Button>
-				<Button
-					variant="text"
-					onClick={onDeleteClick}
+					<Button
+						variant="text"
+						onClick={() => setTextAlignment("right")}
+					>
+						<FormatAlignRight />
+					</Button>
+				</Tooltip>
+				<Tooltip
+					title="delete"
+					placement="right"
+					arrow
+					followCursor
 				>
-					<Delete />
-				</Button>
+					<Button
+						variant="text"
+						onClick={onDeleteClick}
+					>
+						<Delete />
+					</Button>
+				</Tooltip>
 			</ButtonGroup>
 		</div>
 	);
