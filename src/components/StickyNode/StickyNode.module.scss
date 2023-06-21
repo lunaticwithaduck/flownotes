@@ -52,26 +52,6 @@
 				}
 			}
 		}
-
-		&--centered {
-			height: 100%;
-			width: 100%;
-
-			:global {
-				.MuiFormControl-root {
-					height: 100%;
-					width: 100%;
-				}
-
-				.MuiInput-root {
-					height: 100%;
-					text-align: center;
-					width: 72%;
-					left: 35px;
-					font-size: $font-larger;
-				}
-			}
-		}
 	}
 
 	&--green {

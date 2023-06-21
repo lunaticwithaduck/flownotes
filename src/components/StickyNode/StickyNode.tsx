@@ -14,7 +14,6 @@ const fontSizes: Array<FontSize> = ["larger", "large"];
 
 // TODO: Refactor
 const StickyNode: React.FC<StickyNodeType> = ({ id, data, selected }) => {
-	const [shouldCenterText, setCenterText] = useState(true);
 	const [fontSize, setFontSize] = useState<FontSize>("larger");
 	const [textfieldValue, setTextfieldValue] = useState("");
 	const textfieldRef = useRef<HTMLTextAreaElement>();
@@ -50,12 +49,6 @@ const StickyNode: React.FC<StickyNodeType> = ({ id, data, selected }) => {
 		}
 	}, [textfieldRef.current?.scrollHeight]);
 
-	useEffect(() => {
-		const isAtMaxScrollWidth = textfieldRef.current && textfieldRef.current?.value.length >= 17;
-
-		setCenterText(!isAtMaxScrollWidth);
-	}, [textfieldRef.current?.value.length]);
-
 	return (
 		<>
 			<div
@@ -72,7 +65,7 @@ const StickyNode: React.FC<StickyNodeType> = ({ id, data, selected }) => {
 				{selected && <ColorMenu id={id} />}
 				{selected && <FormattingMenu id={id} />}
 
-				<div className={clsx(shouldCenterText ? styles[`stickyNode__inputContainer--centered`] : styles.stickyNode__inputContainer, styles[`stickyNode__inputContainer--${fontSize}`])}>
+				<div className={clsx(styles.stickyNode__inputContainer, styles[`stickyNode__inputContainer--${fontSize}`])}>
 					<TextField
 						id="standard-basic"
 						variant="standard"
