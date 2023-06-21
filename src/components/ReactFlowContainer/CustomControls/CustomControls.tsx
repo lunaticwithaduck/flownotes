@@ -1,5 +1,5 @@
 import { Button, ButtonGroup } from "@mui/material";
-import { ZoomIn, ZoomOut, ZoomOutMap, AddBox } from "@mui/icons-material";
+import { ZoomIn, ZoomOut, ZoomOutMap, AddBox, LightMode, DarkMode } from "@mui/icons-material";
 import { Node, Panel, useReactFlow } from "reactflow";
 import { useCallback } from "react";
 import { NodeTypes } from "../../../types/nodeTypes";
@@ -7,7 +7,12 @@ import { v4 as uuid } from "uuid";
 
 import styles from "./CustomControls.module.scss";
 
-export const CustomControls = () => {
+interface CustomControlsProps {
+	isDarkMode: boolean;
+	setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const CustomControls: React.FC<CustomControlsProps> = ({ isDarkMode, setDarkMode }) => {
 	const { zoomIn, zoomOut, fitView, setNodes, getNodes } = useReactFlow();
 
 	const onZoomInClick = () => zoomIn();
@@ -30,7 +35,8 @@ export const CustomControls = () => {
 				position="bottom-right"
 				className={styles.customControls}
 			>
-				<ButtonGroup variant="outlined">
+				<ButtonGroup variant={isDarkMode ? "contained" : "outlined"}>
+					<Button onClick={() => setDarkMode(!isDarkMode)}>{isDarkMode ? <LightMode /> : <DarkMode />}</Button>
 					<Button onClick={onZoomOutClick}>
 						<ZoomOut />
 					</Button>

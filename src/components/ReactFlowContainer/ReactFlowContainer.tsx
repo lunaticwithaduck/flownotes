@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { Background, BackgroundVariant, MiniMap, ReactFlow, useNodesState } from "reactflow";
 import nodeTypes, { NodeTypes, StickyNode } from "../../types/nodeTypes";
 
@@ -9,6 +9,7 @@ import CustomThemeProvider from "./CustomThemeProvider";
 const initialNodes: StickyNode[] = [{ id: "1", position: { x: 0, y: 0 }, data: { color: "green" }, type: NodeTypes.StickyNode }];
 
 export const ReactFlowContainer = () => {
+	const [isDarkMode, setDarkMode] = useState(false);
 	const [nodes, _, onNodesChange] = useNodesState(initialNodes);
 
 	const memoizedNodeTypes = useMemo(() => nodeTypes, []) as any; // TODO: Don't use any
@@ -24,9 +25,13 @@ export const ReactFlowContainer = () => {
 						fitView={true}
 						fitViewOptions={{ maxZoom: 1, minZoom: 1 }}
 					>
-						<CustomControls />
+						<CustomControls
+							isDarkMode={isDarkMode}
+							setDarkMode={setDarkMode}
+						/>
 						<Background
 							variant={"dots" as BackgroundVariant}
+							style={{ backgroundColor: isDarkMode ? "#3b3b3b" : "" }}
 							gap={12}
 							size={1}
 						/>
