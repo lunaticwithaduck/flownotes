@@ -68,8 +68,10 @@ const StickyNode: React.FC<StickyNodeType> = ({ id, data, selected }) => {
 					position={Position.Top}
 					className={styles.stickyNode__handle}
 				/>
+
 				{selected && <ColorMenu id={id} />}
-				{selected && <FormattingMenu />}
+				{selected && <FormattingMenu id={id} />}
+
 				<div className={clsx(shouldCenterText ? styles[`stickyNode__inputContainer--centered`] : styles.stickyNode__inputContainer, styles[`stickyNode__inputContainer--${fontSize}`])}>
 					<TextField
 						id="standard-basic"
@@ -83,6 +85,7 @@ const StickyNode: React.FC<StickyNodeType> = ({ id, data, selected }) => {
 						InputProps={{ disableUnderline: true }}
 					/>
 				</div>
+
 				<Handle
 					type="source"
 					position={Position.Bottom}

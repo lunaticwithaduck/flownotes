@@ -1,16 +1,21 @@
+import React, { useCallback, memo } from "react";
+import { useReactFlow } from "reactflow";
 import { Button, ButtonGroup } from "@mui/material";
 import { FormatAlignCenter, FormatAlignLeft, FormatAlignRight, Delete } from "@mui/icons-material";
 
 import styles from "./FormattingMenu.module.scss";
 
-/*
- & Text Alignment - Center, Left, Right
- & sum else?
- & Delete Option
+interface FormattingMenuProps {
+	id: string;
+}
 
-*/
+export const FormattingMenu: React.FC<FormattingMenuProps> = memo(({ id }) => {
+	const { setNodes } = useReactFlow();
 
-export const FormattingMenu = () => {
+	const onDeleteClick = useCallback(() => {
+		setNodes(nodes => nodes.filter(node => node.id !== id));
+	}, [id]);
+
 	return (
 		<div className={styles.formattingMenu}>
 			<ButtonGroup
@@ -27,10 +32,13 @@ export const FormattingMenu = () => {
 				<Button variant="text">
 					<FormatAlignRight />
 				</Button>
-				<Button variant="text">
+				<Button
+					variant="text"
+					onClick={onDeleteClick}
+				>
 					<Delete />
 				</Button>
 			</ButtonGroup>
 		</div>
 	);
-};
+});
