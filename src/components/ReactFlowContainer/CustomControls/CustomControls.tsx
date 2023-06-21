@@ -1,12 +1,15 @@
 import { Button, ButtonGroup } from "@mui/material";
-import { ZoomIn, ZoomOut, ZoomOutMap, AddBox, LightMode, DarkMode } from "@mui/icons-material";
+import { ZoomIn, ZoomOut, ZoomOutMap, AddBox, LightMode, DarkMode, ArrowBackIos } from "@mui/icons-material";
+
 import { Node, Panel, useReactFlow } from "reactflow";
 import { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { NodeTypes } from "../../../types/nodeTypes";
 import { v4 as uuid } from "uuid";
+import routes from "../../../constants/routes";
 
 import styles from "./CustomControls.module.scss";
-
 interface CustomControlsProps {
 	isDarkMode: boolean;
 	setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
@@ -14,9 +17,11 @@ interface CustomControlsProps {
 
 export const CustomControls: React.FC<CustomControlsProps> = ({ isDarkMode, setDarkMode }) => {
 	const { zoomIn, zoomOut, fitView, setNodes, getNodes } = useReactFlow();
+	const navigate = useNavigate();
 
 	const onZoomInClick = () => zoomIn();
 	const onZoomOutClick = () => zoomOut();
+	const onGoBackClick = () => navigate(routes.DASHBOARD);
 
 	const onTransform = useCallback(() => {
 		fitView({ maxZoom: 1 });
@@ -31,6 +36,16 @@ export const CustomControls: React.FC<CustomControlsProps> = ({ isDarkMode, setD
 
 	return (
 		<>
+			<Panel
+				position="top-left"
+				className={styles.customControls}
+			>
+				<ButtonGroup variant={isDarkMode ? "contained" : "outlined"}>
+					<Button onClick={onGoBackClick}>
+						<ArrowBackIos />
+					</Button>
+				</ButtonGroup>
+			</Panel>
 			<Panel
 				position="bottom-right"
 				className={styles.customControls}
