@@ -27,15 +27,15 @@ export const FormattingMenu: React.FC<FormattingMenuProps> = memo(({ id, setText
 			>
 				<Button
 					variant="text"
-					onClick={() => setTextAlignment("center")}
-				>
-					<FormatAlignCenter />
-				</Button>
-				<Button
-					variant="text"
 					onClick={() => setTextAlignment("left")}
 				>
 					<FormatAlignLeft />
+				</Button>
+				<Button
+					variant="text"
+					onClick={() => setTextAlignment("center")}
+				>
+					<FormatAlignCenter />
 				</Button>
 				<Button
 					variant="text"
