@@ -2,7 +2,8 @@ import { Route, BrowserRouter, Routes } from "react-router-dom";
 import Auth0ProviderWithRedirectCallback, { ProtectedRoute } from "./components/Auth0ProviderWithRedirectCallback";
 import routes from "./constants/routes";
 
-import Board from "./features/Board";
+import Flow from "./features/Flow";
+import Dashboard from "./components/Dashboard";
 
 const App = () => {
 	return (
@@ -17,11 +18,15 @@ const App = () => {
 				<Routes>
 					<Route
 						path={routes.DASHBOARD}
-						element={<ProtectedRoute component={Board} />}
+						element={<ProtectedRoute component={Dashboard} />}
+					/>
+					<Route
+						path={routes.BOARD}
+						element={<ProtectedRoute component={Flow} />}
 					/>
 					<Route
 						path={routes.HOME}
-						element={<ProtectedRoute component={Board} />}
+						element={<ProtectedRoute component={Flow} />}
 					/>
 				</Routes>
 			</Auth0ProviderWithRedirectCallback>

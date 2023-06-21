@@ -1,6 +1,7 @@
 const routes = {
 	AUTHENTICATE: "/authenticate",
 	DASHBOARD: "/dashboard",
+	BOARD: "BOARD",
 	HOME: "/",
 };
 
