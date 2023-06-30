@@ -2,6 +2,7 @@ import { Button, Container, Stack, Typography } from "@mui/material";
 
 import styles from "./Dashboard.module.scss";
 
+// TODO: Refactor
 export const Dashboard = () => {
 	const items = [
 		{ title: "A board", author: "Author" },
