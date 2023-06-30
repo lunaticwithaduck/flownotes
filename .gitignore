@@ -24,3 +24,21 @@ dist-ssr
 *.sw?
 
 .env
+
+# Virtual environment
+/venv/
+/env/
+pyvenv.cfg
+lib64/
+lib/
+share/
+bin/
+
+# Compiled Python files
+*.pyc
+*.pyo
+*.pyd
+
+# Package metadata
+pip-wheel-metadata/
+*.egg-info/
