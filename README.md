@@ -1,11 +1,13 @@
 Current Preview: ![image](https://github.com/lunaticwithaduck/flownotes/assets/132492967/6da3eaf6-dc2c-48f8-a9d4-3fa7ec8081c6)
 
-### "I want to try this out for some not very bright reason how do I set it up?"
+### "I want to try this out, how uuuh do I do the setup?"
 
-1. Clone project
-2. Uuuga buuga run **_yarn install_** or **_npm install_**
-3. How about running the dev script now?
-4. Realise this project is very badly written and send me some hate mail ;)))
+1. git clone https://github.com/lunaticwithaduck/flownotes.git
+2. cd frontend and yarn install (fuck you, use yarn >:3)
+3. yarn build
+4. cd ../backend and pip install -r requirements.txt
+5. uvicorn main:app --reload
+6. navigate to 127.0.0.1:8000 and have fun
 
 ### Tech Stack of the Project (this info is pretty useless to you but I kinda like how it looks)
 
@@ -15,7 +17,6 @@ Current Preview: ![image](https://github.com/lunaticwithaduck/flownotes/assets/1
 - ReactFlow
 - MaterialUI
 - Auth0
-- Figma
 - SCSS
 - FastAPI
 
