@@ -1,5 +1,5 @@
 import { Button, ButtonGroup } from "@mui/material";
-import { ZoomIn, ZoomOut, ZoomOutMap, AddBox, LightMode, DarkMode, ArrowBackIos } from "@mui/icons-material";
+import { ZoomIn, ZoomOut, ZoomOutMap, AddBox, LightMode, DarkMode, ArrowBackIosNew } from "@mui/icons-material";
 
 import { Node, Panel, useReactFlow } from "reactflow";
 import { useCallback } from "react";
@@ -42,7 +42,7 @@ export const CustomControls: React.FC<CustomControlsProps> = ({ isDarkMode, setD
 			>
 				<ButtonGroup variant={isDarkMode ? "contained" : "outlined"}>
 					<Button onClick={onGoBackClick}>
-						<ArrowBackIos />
+						<ArrowBackIosNew />
 					</Button>
 				</ButtonGroup>
 			</Panel>
