@@ -1,21 +1,34 @@
-import { Container, Stack } from "@mui/material";
+import { Button, Container, Stack, Typography } from "@mui/material";
 
 import styles from "./Dashboard.module.scss";
 
 export const Dashboard = () => {
-	const items = [1];
+	const items = [
+		{ title: "A board", author: "Author" },
+		{ title: "A board", author: "Author" },
+		{ title: "A board", author: "Author" },
+	];
 
 	return (
 		<Container
-			maxWidth="md"
+			maxWidth={false}
 			className={styles.container}
 		>
 			{items.length === 0 ? (
-				<div></div>
+				<div className={styles.container__empty}>
+					<Typography variant="h4">There aren't any boards you have created yet.</Typography>
+					<Button variant="contained">Create one</Button>
+				</div>
 			) : (
 				<Stack spacing={4}>
-					<div>3</div>
-					<div>4</div>
+					{items.map((item, index) => {
+						return (
+							<div key={index}>
+								<Typography variant="h5">{item.title}</Typography>
+								{item.author}
+							</div>
+						);
+					})}
 				</Stack>
 			)}
 		</Container>
