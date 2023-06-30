@@ -1,9 +1,9 @@
-Current Preview:
-![image](https://github.com/lunaticwithaduck/flownotes/assets/132492967/6da3eaf6-dc2c-48f8-a9d4-3fa7ec8081c6)
+Current Preview: ![image](https://github.com/lunaticwithaduck/flownotes/assets/132492967/6da3eaf6-dc2c-48f8-a9d4-3fa7ec8081c6)
 
 ### "I want to try this out for some not very bright reason how do I set it up?"
+
 1. Clone project
-2. Uuuga buuga run ***yarn install*** or ***npm install***
+2. Uuuga buuga run **_yarn install_** or **_npm install_**
 3. How about running the dev script now?
 4. Realise this project is very badly written and send me some hate mail ;)))
 
@@ -11,11 +11,13 @@ Current Preview:
 
 - React
 - TypeScript
+- Python
 - ReactFlow
 - MaterialUI
 - Auth0
 - Figma
 - SCSS
+- FastAPI
 
 ### Tech Stack Might Expand With
 
@@ -24,6 +26,7 @@ Current Preview:
 - Socket.io
 
 ### TODO List:
+
 - Add the Ability to Save Boards (CRUD)
 - Add Collaboration Feature
 - Maybe Add Undo Button??????
